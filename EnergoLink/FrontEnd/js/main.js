@@ -2,6 +2,8 @@
  * configure RequireJS
  * prefer named modules to long paths, especially for version mgt
  * or 3rd party libraries
+
+ Подробное описание как это все работает читать тут http://www.startersquad.com/blog/angularjs-requirejs/
  */
 require.config({
 
