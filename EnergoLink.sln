@@ -1,9 +1,17 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio Express 2013 for Web
-VisualStudioVersion = 12.0.21005.1
-MinimumVisualStudioVersion = 10.0.40219.1
+# Visual Studio 2012
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EnergoLink", "EnergoLink\EnergoLink.csproj", "{8283B0DB-24FD-48B9-82DD-A0AB55503D98}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CloudAscue.Mocks", "CloudAscue.Mocks\CloudAscue.Mocks.csproj", "{4882B95A-9D04-4A6B-B8B1-0824F76B6532}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CloudAskue.BusinessLogic", "CloudAskue.BusinessLogic\CloudAskue.BusinessLogic.csproj", "{A7A44564-16EC-48C5-B08F-E45F1D9232A4}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CloudAskue.BusinessLogic.Contracts", "CloudAskue.BusinessLogic.Contracts\CloudAskue.BusinessLogic.Contracts.csproj", "{C6C0E513-E3A4-49DF-B66C-8CD9D63E8A6F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CloudAskue.DataProviders.Contracts", "CloudAskue.DataProviders.Contracts\CloudAskue.DataProviders.Contracts.csproj", "{6903FB7B-67F2-4095-8C25-C76B7E952769}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CloudAskueApi", "CloudAskueApi\CloudAskueApi.csproj", "{452A8367-85E3-468F-B1BD-AD18B4687691}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +23,26 @@ Global
 		{8283B0DB-24FD-48B9-82DD-A0AB55503D98}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{8283B0DB-24FD-48B9-82DD-A0AB55503D98}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{8283B0DB-24FD-48B9-82DD-A0AB55503D98}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4882B95A-9D04-4A6B-B8B1-0824F76B6532}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4882B95A-9D04-4A6B-B8B1-0824F76B6532}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4882B95A-9D04-4A6B-B8B1-0824F76B6532}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4882B95A-9D04-4A6B-B8B1-0824F76B6532}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A7A44564-16EC-48C5-B08F-E45F1D9232A4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A7A44564-16EC-48C5-B08F-E45F1D9232A4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A7A44564-16EC-48C5-B08F-E45F1D9232A4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A7A44564-16EC-48C5-B08F-E45F1D9232A4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C6C0E513-E3A4-49DF-B66C-8CD9D63E8A6F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C6C0E513-E3A4-49DF-B66C-8CD9D63E8A6F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C6C0E513-E3A4-49DF-B66C-8CD9D63E8A6F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C6C0E513-E3A4-49DF-B66C-8CD9D63E8A6F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6903FB7B-67F2-4095-8C25-C76B7E952769}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6903FB7B-67F2-4095-8C25-C76B7E952769}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6903FB7B-67F2-4095-8C25-C76B7E952769}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6903FB7B-67F2-4095-8C25-C76B7E952769}.Release|Any CPU.Build.0 = Release|Any CPU
+		{452A8367-85E3-468F-B1BD-AD18B4687691}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{452A8367-85E3-468F-B1BD-AD18B4687691}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{452A8367-85E3-468F-B1BD-AD18B4687691}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{452A8367-85E3-468F-B1BD-AD18B4687691}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
