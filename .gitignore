@@ -6,3 +6,11 @@
 /EnergoLink/obj
 /EnergoLink/bin
 /EnergoLink/App_Data
+/CloudAscue.Mocks/bin/Debug/*.dll
+/CloudAscue.Mocks/obj/Debug/*.dll
+*.dll
+*.pdb
+*.cache
+*.force
+Debug
+bin
