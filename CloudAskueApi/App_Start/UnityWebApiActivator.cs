@@ -1,5 +1,5 @@
-using System.Web.Http;
 using Microsoft.Practices.Unity.WebApi;
+using System.Web.Http;
 
 [assembly: WebActivatorEx.PreApplicationStartMethod(typeof(CloudAskueApi.App_Start.UnityWebApiActivator), "Start")]
 [assembly: WebActivatorEx.ApplicationShutdownMethod(typeof(CloudAskueApi.App_Start.UnityWebApiActivator), "Shutdown")]
