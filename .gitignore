@@ -3,9 +3,6 @@
 ################################################################################
 
 /packages
-/EnergoLink/obj
-/EnergoLink/bin
-/EnergoLink/App_Data
 /CloudAscue.Mocks/bin/Debug/*.dll
 /CloudAscue.Mocks/obj/Debug/*.dll
 *.dll
@@ -14,3 +11,4 @@
 *.force
 Debug
 bin
+/CloudAskueApi/App_Data
