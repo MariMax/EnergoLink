@@ -18,10 +18,10 @@
 	</div>
 */
 
-(function ( angular ) {
+define(['./module'], function (directives) {
 	'use strict';
 
-	angular.module( 'angularTreeview', [] ).directive( 'treeModel', ['$compile','$rootScope', function( $compile, $rootScope ) {
+	directives.directive( 'treeModel', ['$compile','$rootScope', function( $compile, $rootScope ) {
 		return {
 			restrict: 'A',
 			link: function ( $scope, $element, attrs ) {
@@ -49,8 +49,9 @@
 							'<i class="collapsed" data-ng-show="node.' + nodeChildren + '.length && node.collapsed" data-ng-click="' + treeId + '.selectNodeHead(node)"></i>' +
 							'<i class="expanded" data-ng-show="node.' + nodeChildren + '.length && !node.collapsed" data-ng-click="' + treeId + '.selectNodeHead(node)"></i>' +
 							'<i class="normal" data-ng-hide="node.' + nodeChildren + '.length"></i> ' +
-                            '<img ng-src="{{node.IconUrl}}"> '+
+                            //'<img ng-src="{{node.IconUrl}}"> '+
 							'<span data-ng-class="node.selected" data-ng-click="' + treeId + '.selectNodeLabel(node)">{{node.' + nodeLabel + '}}</span>' +
+							
 							'<div ng-if="!node.collapsed" data-ng-hide="node.collapsed" data-tree-id="' + treeId + '" data-tree-model="node.' + nodeChildren + '" data-node-id=' + nodeId + ' data-node-label=' + nodeLabel + ' data-node-children=' + nodeChildren + '></div>' +
 						'</li>' +
 					'</ul>';
@@ -96,4 +97,4 @@
 			}
 		};
 	}]);
-})( angular );
+});

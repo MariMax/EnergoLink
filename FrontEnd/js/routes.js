@@ -8,7 +8,7 @@ define(['./app'], function (app) {
     return app.config(['$routeProvider', function ($routeProvider) {
         $routeProvider.when('/CalcModule', {
             templateUrl: 'partials/Calc.html',
-            controller: 'MyCtrl1'
+            controller: 'CalcCtrl'
         });
 
         $routeProvider.when('/view2', {
