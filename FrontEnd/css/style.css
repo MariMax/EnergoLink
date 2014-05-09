@@ -149,7 +149,7 @@ input[type="submit"] {
 }
 /*CalcPage*/
 
-article.calc{
+article{
     min-width: 700px;
     //min-height: 100%;
     padding:20px;

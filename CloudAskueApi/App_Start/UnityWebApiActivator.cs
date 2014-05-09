@@ -1,8 +1,7 @@
-using Microsoft.Practices.Unity.WebApi;
+
 using System.Web.Http;
 
-[assembly: WebActivatorEx.PreApplicationStartMethod(typeof(CloudAskueApi.App_Start.UnityWebApiActivator), "Start")]
-[assembly: WebActivatorEx.ApplicationShutdownMethod(typeof(CloudAskueApi.App_Start.UnityWebApiActivator), "Shutdown")]
+
 
 namespace CloudAskueApi.App_Start
 {
@@ -14,7 +13,8 @@ namespace CloudAskueApi.App_Start
         {
             // Use UnityHierarchicalDependencyResolver if you want to use a new child container for each IHttpController resolution.
             // var resolver = new UnityHierarchicalDependencyResolver(UnityConfig.GetConfiguredContainer());
-            var resolver = new UnityDependencyResolver(UnityConfig.GetConfiguredContainer());
+            var resolver = GlobalConfiguration.Configuration.DependencyResolver = new Unity.WebApi.UnityDependencyResolver(UnityConfig.GetConfiguredContainer());
+            //var resolver = new UnityDependencyResolver(UnityConfig.GetConfiguredContainer());
 
             GlobalConfiguration.Configuration.DependencyResolver = resolver;
         }

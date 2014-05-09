@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Web;
 using System.Web.Configuration;
 using System.Web.Http;
+using System.Web.Http.Cors;
 
 namespace WebApplication1.Controllers
 {
@@ -22,6 +23,7 @@ namespace WebApplication1.Controllers
             }
         }
 
+        [EnableCors("*","*","*")]
         public async Task<HttpResponseMessage> PostFormData()
         {
             // Check if the request contains multipart/form-data.

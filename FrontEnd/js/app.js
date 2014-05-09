@@ -8,7 +8,8 @@ define([
     './controllers/index',
     './directives/index',
     './filters/index',
-    './services/index'
+    './services/index',
+
 ], function (angular) {
     'use strict';
 
@@ -17,6 +18,7 @@ define([
         'app.directives',
         'app.filters',
         'app.services',
-        'ngRoute'
+        'ngRoute',
+
     ]);
 });

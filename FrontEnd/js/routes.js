@@ -11,14 +11,14 @@ define(['./app'], function (app) {
             controller: 'CalcCtrl'
         });
 
-        $routeProvider.when('/view2', {
-            templateUrl: 'partials/partial2.html',
-            controller: 'MyCtrl2'
+        $routeProvider.when('/fileUpload', {
+            templateUrl: 'partials/fileUpload.html',
+            controller: 'fileUpload'
         });
 
         $routeProvider.when('/login', {
             templateUrl: 'partials/login.html',
-            controller: 'MyCtrl2'
+            controller: 'fileUpload'
         });
 
         $routeProvider.otherwise({
