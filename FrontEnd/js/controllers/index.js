@@ -6,5 +6,6 @@
  **/
 define([
     './CalcCtrl',
-    './fileUpload'
+    './fileUpload',
+    './schemeCtrl'
 ], function () {});

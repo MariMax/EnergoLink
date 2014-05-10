@@ -5,4 +5,6 @@
  **/
 define(['./app-version', 
 		'./angular.treeview',
-		'./angular.tableview'], function () {});
+		'./angular.tableview',
+		
+		], function () {});

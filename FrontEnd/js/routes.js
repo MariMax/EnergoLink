@@ -21,6 +21,11 @@ define(['./app'], function (app) {
             controller: 'fileUpload'
         });
 
+        $routeProvider.when('/schemes', {
+            templateUrl: 'partials/schemes.html',
+            controller: 'schemeCtrl'
+        });
+
         $routeProvider.otherwise({
             redirectTo: '/CalcModule'
         });
