@@ -21,7 +21,6 @@ namespace CloudAskueApi.Controllers
 
         
         //http://localhost:2226/api/XCalculator/GetSchemes?CompanyId=3DC72D1C-1DA4-425C-ACFA-99DE60C89BCB
-
         public HttpResponseMessage GetSchemes(ShemeQuery query)
         {
             var schemes = _schemesDataSource.GetSchemes(query.CompanyId, query.StartDate, query.EndDate);
