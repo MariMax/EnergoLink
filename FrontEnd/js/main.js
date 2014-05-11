@@ -15,6 +15,9 @@ require.config({
         "underscore":'//cdnjs.cloudflare.com/ajax/libs/underscore.js/1.6.0/underscore-min',
         'newCalculationPopup':'/js/popups/newCalculationPopup',
         'configuration':'/js/config',
+        'jquery':'//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min',
+        'es5-shim':'//cdnjs.cloudflare.com/ajax/libs/es5-shim/2.3.0/es5-shim.min',
+        'angular-file-upload':'/js/lib/angular-file-upload.min'
     },
 
     /**
@@ -23,12 +26,16 @@ require.config({
      */
     shim: {
         'angular': {
-            exports: 'angular'
+            exports: 'angular',
+            deps: ['jquery','es5-shim']
         },
         'angular-route': {
             deps: ['angular']
         },
         'ungular-ui': {
+            deps: ['angular']
+        },
+        'angular-file-upload':{
             deps: ['angular']
         },
     },
