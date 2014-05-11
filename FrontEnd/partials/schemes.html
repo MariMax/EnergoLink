@@ -12,28 +12,10 @@
             </tr>
             <tr>
                 <td>
-    <div class="row">
-
-            <p class="input-group">
-              <input type="text" class="form-control" datepicker-popup="{{format}}" ng-model="StartDate" is-open="startOpened"  datepicker-options="dateOptions" date-disabled="disabled(date, mode)" ng-required="true" close-text="Close" />
-              <span class="input-group-btn">
-                <button type="button" class="btn btn-default" ng-click="openStart($event)"><i class="glyphicon glyphicon-calendar"></i></button>
-              </span>
-            </p>
-
-    </div>
+<div date-picker required="true" date="StartDate"></div>
                 </td>
                 <td>
-    <div class="row">
-
-            <p class="input-group">
-              <input type="text" class="form-control" datepicker-popup="{{format}}" ng-model="EndDate" is-open="endOpened"  datepicker-options="dateOptions" date-disabled="disabled(date, mode)" ng-required="true" close-text="Close" />
-              <span class="input-group-btn">
-                <button type="button" class="btn btn-default" ng-click="openEnd($event)"><i class="glyphicon glyphicon-calendar"></i></button>
-              </span>
-            </p>
-
-    </div>
+<div date-picker required="true" date="EndDate"></div>
                 </td>
                 <td><input type="button" ng-click="show()" value="Показать"></td>
             </tr>

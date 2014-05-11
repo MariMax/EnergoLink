@@ -6,5 +6,5 @@
 define(['./app-version', 
 		'./angular.treeview',
 		'./angular.tableview',
-		
+		'./datePicker'
 		], function () {});
