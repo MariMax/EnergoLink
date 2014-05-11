@@ -1,92 +1,94 @@
-define(['./module'], function (controllers) {
+define(['./module'], function(controllers) {
     'use strict';
-    controllers.controller('fileUpload', ['$scope','$fileUploader', function ($scope, $fileUploader) {
+    controllers.controller('fileUpload', ['$scope', '$fileUploader', '$configuration',
+        function($scope, $fileUploader, $configuration) {
 
-        // create a uploader with options
-        var uploader = $scope.uploader = $fileUploader.create({
-            scope: $scope,                          // to automatically update the html. Default: $rootScope
-            url: 'http://localhost:2226/api/file',
-            formData: [
-                { key: 'value' }
-            ],
-            filters: [
-                function (item) {                    // first user filter
-                    console.info('filter1');
-                    return true;
-                }
-            ]
-        });
-
-
-        // FAQ #1
-        var item = {
-            file: {
-                name: 'Previously uploaded file',
-                size: 1e6
-            },
-            progress: 100,
-            isUploaded: true,
-            isSuccess: true
-        };
-        item.remove = function() {
-            uploader.removeFromQueue(this);
-        };
-        uploader.queue.push(item);
-        uploader.progress = 100;
+            // create a uploader with options
+            var uploader = $scope.uploader = $fileUploader.create({
+                scope: $scope, // to automatically update the html. Default: $rootScope
+                url: $configuration.baseUrl + '/api/file',
+                formData: [{
+                    key: 'value'
+                }],
+                // filters: [
+                //     function (item) {                    // first user filter
+                //         console.info('filter1');
+                //         return true;
+                //     }
+                // ]
+            });
 
 
-        // ADDING FILTERS
+            // FAQ #1
+            // var item = {
+            //     file: {
+            //         name: 'Previously uploaded file',
+            //         size: 1e6
+            //     },
+            //     progress: 100,
+            //     isUploaded: true,
+            //     isSuccess: true
+            // };
+            // item.remove = function() {
+            //     uploader.removeFromQueue(this);
+            // };
+            // uploader.queue.push(item);
+            // uploader.progress = 100;
 
-        uploader.filters.push(function (item) { // second user filter
-            console.info('filter2');
-            return true;
-        });
 
-        // REGISTER HANDLERS
+            // ADDING FILTERS
 
-        uploader.bind('afteraddingfile', function (event, item) {
-            console.info('After adding a file', item);
-        });
+            // uploader.filters.push(function (item) { // second user filter
+            //     console.info('filter2');
+            //     return true;
+            // });
 
-        uploader.bind('whenaddingfilefailed', function (event, item) {
-            console.info('When adding a file failed', item);
-        });
+            // REGISTER HANDLERS
 
-        uploader.bind('afteraddingall', function (event, items) {
-            console.info('After adding all files', items);
-        });
+            uploader.bind('afteraddingfile', function(event, item) {
+                console.info('After adding a file', item);
+            });
 
-        uploader.bind('beforeupload', function (event, item) {
-            console.info('Before upload', item);
-        });
+            uploader.bind('whenaddingfilefailed', function(event, item) {
+                console.info('When adding a file failed', item);
+            });
 
-        uploader.bind('progress', function (event, item, progress) {
-            console.info('Progress: ' + progress, item);
-        });
+            uploader.bind('afteraddingall', function(event, items) {
+                console.info('After adding all files', items);
+            });
 
-        uploader.bind('success', function (event, xhr, item, response) {
-            console.info('Success', xhr, item, response);
-        });
+            uploader.bind('beforeupload', function(event, item) {
+                console.info('Before upload', item);
+            });
 
-        uploader.bind('cancel', function (event, xhr, item) {
-            console.info('Cancel', xhr, item);
-        });
+            uploader.bind('progress', function(event, item, progress) {
+                console.info('Progress: ' + progress, item);
+            });
 
-        uploader.bind('error', function (event, xhr, item, response) {
-            console.info('Error', xhr, item, response);
-        });
+            uploader.bind('success', function(event, xhr, item, response) {
+                console.info('Success', xhr, item, response);
+            });
 
-        uploader.bind('complete', function (event, xhr, item, response) {
-            console.info('Complete', xhr, item, response);
-        });
+            uploader.bind('cancel', function(event, xhr, item) {
+                console.info('Cancel', xhr, item);
+            });
 
-        uploader.bind('progressall', function (event, progress) {
-            console.info('Total progress: ' + progress);
-        });
+            uploader.bind('error', function(event, xhr, item, response) {
+                console.info('Error', xhr, item, response);
+            });
 
-        uploader.bind('completeall', function (event, items) {
-            console.info('Complete all', items);
-        });
+            uploader.bind('complete', function(event, xhr, item, response) {
+                console.info('Complete', xhr, item, response);
+            });
 
-    }]);
+            uploader.bind('progressall', function(event, progress) {
+                console.info('Total progress: ' + progress);
+            });
+
+            uploader.bind('completeall', function(event, items) {
+                console.info('Complete all', items);
+            });
+
+        }
+    ]);
 });

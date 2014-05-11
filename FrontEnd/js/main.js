@@ -14,7 +14,7 @@ require.config({
         'ungular-ui':'/js/lib/ui-bootstrap-tpls-0.11.0.min',
         "underscore":'//cdnjs.cloudflare.com/ajax/libs/underscore.js/1.6.0/underscore-min',
         'newCalculationPopup':'/js/popups/newCalculationPopup',
-        
+        'configuration':'/js/config',
     },
 
     /**

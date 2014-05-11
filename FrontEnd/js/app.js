@@ -9,7 +9,7 @@ define('app', [
     './directives/index',
     './filters/index',
     './services/index',
-
+    'configuration'
 
 ], function(angular) {
     'use strict';
@@ -20,6 +20,6 @@ define('app', [
         'app.filters',
         'app.services',
         'ngRoute',
-        
+        'configuration',
     ]);
 });
