@@ -1,7 +1,8 @@
-define(['./module'], function (controllers) {
-    'use strict';
-    controllers.controller('CalcCtrl', ['$scope',function ($scope) {
-    	$scope.tree=[
+define(['./module'], function(controllers) {
+  'use strict';
+  controllers.controller('CalcCtrl', ['$scope', '$routeParams', '$backEnd',
+    function($scope, $routeParams, $backEnd) {
+      $scope.tree=[
         { "itemLabel" : "User", "itemId" : "role1", "aPositive":25, "rPositive":26, "aNegative":35,"rNegative":36, "items" : [
           { "itemLabel" : "subUser1", "itemId" : "role11",  "aPositive":25, "rPositive":26, "aNegative":35,"rNegative":36,"items" : [] },
           { "itemLabel" : "subUser2", "itemId" : "role12",  "aPositive":25, "rPositive":26, "aNegative":35,"rNegative":36,"items" : [
@@ -33,5 +34,17 @@ define(['./module'], function (controllers) {
         ]}
       ];
 
-    }]);
+      function init() {
+        var calcId = $routeParams.id;
+        if (calcId)
+        $backEnd.calcResult(calcId).then(function(data){
+          debugger;
+        });
+      }
+
+      init();
+    }
+  ]);
 });
+
+
