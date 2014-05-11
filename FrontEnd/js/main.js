@@ -17,7 +17,8 @@ require.config({
         'configuration':'/js/config',
         'jquery':'//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min',
         'es5-shim':'//cdnjs.cloudflare.com/ajax/libs/es5-shim/2.3.0/es5-shim.min',
-        'angular-file-upload':'/js/lib/angular-file-upload.min'
+        'angular-file-upload':'/js/lib/angular-file-upload.min',
+        'backEnd':'/js/services/backEnd',
     },
 
     /**

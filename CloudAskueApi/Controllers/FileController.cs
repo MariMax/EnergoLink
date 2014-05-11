@@ -23,7 +23,6 @@ namespace WebApplication1.Controllers
             }
         }
 
-        [EnableCors("*","*","*")]
         public async Task<HttpResponseMessage> PostFormData()
         {
             // Check if the request contains multipart/form-data.

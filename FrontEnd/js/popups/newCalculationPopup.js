@@ -8,7 +8,7 @@ define('newCalculationPopup', ['angular','ungular-ui'], function(angular) {
             this.dialogOptions = {
                 resolve: {
                     items: function() {
-                        return options.shemes;
+                        return options.schemes;
                     }
                 },
                 templateUrl: 'partials/newCalculationPopup.html',

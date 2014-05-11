@@ -1,44 +1,38 @@
 define(['./module', 'underscore'], function(controllers, _) {
   'use strict';
 
-  controllers.controller('schemeCtrl', ['$scope', '$newCalculationPopup',
-    function($scope, newCalculationPopup) {
-      $scope.shemes = [{
-        "Id": "15dfd5f7-d61c-495f-9574-5e62caf39b52",
-        "Name": "ОАО \"Челябэнергосбыт\"",
-        "StartDate": "2014-04-01T00:00:00",
-        "EndDate": "2014-05-01T00:00:00",
-        "Done": true
-      }, {
-        "Id": "f3518b55-f4c4-4836-8063-43f2591c4761",
-        "Name": "\"ЭСКБ\"",
-        "StartDate": "2014-04-01T00:00:00",
-        "EndDate": "2014-05-01T00:00:00",
-        "Done": false
-      }];
-
-
+  controllers.controller('schemeCtrl', ['$scope', '$newCalculationPopup', '$backEnd',
+    function($scope, newCalculationPopup, $backEnd) {
+      $scope.model = {};
+      $scope.model.companyId = '3DC72D1C-1DA4-425C-ACFA-99DE60C89BCB';
+      $scope.model.schemes = [];
 
       $scope.newCalculation = function() {
 
         var dialog = newCalculationPopup.create({
-          shemes: $scope.shemes
+          schemes: $scope.model.schemes
         }).open();
 
         dialog.then(function(res) {
-          debugger;
+          $backEnd.calcScheme(res.Id, res.StartDate, res.EndDate).then(function(data){
+            debugger;
+            var scheme = _.find($scope.model.schemes, function(scheme){return scheme.Id==res.Id});
+            $scope.model.schemes.push({Id:data.data.CalcId, StartDate:$scope.model.StartDate, EndDate:$scope.model.EndDate, Done:false, Name:scheme.Name});
+          })
         });
       };
 
       $scope.recalc = function(shemeId) {
-        var sheme = _.find($scope.shemes, function(scheme) {
+        var sheme = _.find($scope.model.schemes, function(scheme) {
           return scheme.Id == shemeId;
         });
 
       };
 
       $scope.show = function() {
-        debugger;
+        $backEnd.getSchemes($scope.model.companyId, $scope.model.StartDate, $scope.model.EndDate).then(function(data) {
+          $scope.model.schemes = data.data.Schemes;
+        });
       }
 
     }

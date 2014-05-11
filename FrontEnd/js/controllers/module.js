@@ -4,7 +4,7 @@
  * below, you can see we bring in our services and constants modules
  * which avails each controller of, for example, the `config` constants object.
  **/
-define(['angular', 'ungular-ui', 'newCalculationPopup','angular-file-upload'], function(ng) {
+define(['angular', 'ungular-ui', 'newCalculationPopup','angular-file-upload','backEnd'], function(ng) {
 	'use strict';
-	return ng.module('app.controllers', ['ui.bootstrap', 'newCalculationPopup','angularFileUpload']);
+	return ng.module('app.controllers', ['ui.bootstrap', 'newCalculationPopup','angularFileUpload','backEnd']);
 });
