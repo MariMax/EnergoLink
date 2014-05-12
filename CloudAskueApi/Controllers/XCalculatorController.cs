@@ -21,6 +21,7 @@ namespace CloudAskueApi.Controllers
 
         
         //http://localhost:2226/api/XCalculator/GetSchemes?CompanyId=3DC72D1C-1DA4-425C-ACFA-99DE60C89BCB
+    [HttpPost]
         public HttpResponseMessage GetSchemes(ShemeQuery query)
         {
             var schemes = _schemesDataSource.GetSchemes(query.CompanyId, query.StartDate, query.EndDate);
@@ -32,7 +33,7 @@ namespace CloudAskueApi.Controllers
             var calcResult = _schemesDataSource.GetCalcResult(calcId);
             return Request.CreateResponse(HttpStatusCode.OK, new { CalcResult = calcResult });
         }
-
+        [HttpPost]
         public HttpResponseMessage Calc(CalcQuery query)
         {
             var calcId = _schemesDataSource.Calc(query.SchemeId, query.StartDate, query.EndDate);
