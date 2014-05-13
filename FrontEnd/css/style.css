@@ -12,7 +12,7 @@ html, body {
     margin: 0;
     padding: 0;
     color: white;
-    
+
     font-size: 14px;
     font-family: 'Roboto', Arial, "Helvetica Neue", Helvetica, sans-serif;
     height: 100%;
@@ -101,7 +101,7 @@ footer.page-footer {
     position:absolute;
 
     color: white;
-    
+
 
 
 background-color: #2c3e50;
@@ -112,7 +112,7 @@ form.login {
 
     margin: 0 auto;
     padding: 20px;
-    width: 300px; 
+    width: 300px;
     border-radius: 10px;
     background-color: #fff;
     box-shadow: 0 0 10px #ccc;
@@ -133,9 +133,9 @@ input[type="password"] {
     width: 95%;
     height: 24px;
     border: 1px solid #ccc;
-    
+
 }
-input[type="submit"] { 
+input[type="submit"] {
     display: inline-block;
     margin: 0 5px;
     padding: 6px 15px;
@@ -163,10 +163,10 @@ article.calc{
 article.calc .tree {
     display:inline-block;
     min-width:30%;
-    
+
     padding: 2%;
    // background-color: rgba(243, 156, 18, 0.1);
-    
+
 }
 
 article.calc .tree b{
@@ -174,10 +174,10 @@ article.calc .tree b{
 }
 
 article.calc .table {
-    
+
     float:right;
     min-width: 60%;
     padding: 2%;
     //background-color: rgba(243, 156, 18, 0.1);
-    
+
 }
