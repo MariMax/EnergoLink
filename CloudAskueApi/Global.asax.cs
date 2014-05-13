@@ -1,4 +1,5 @@
-﻿using System;
+﻿using CloudAskueApi.App_Start;
+using System;
 using System.Web.Http;
 
 
@@ -11,6 +12,9 @@ namespace CloudAskueApi
     {
         protected void Application_Start()
         {
+            var resolver = new Unity.WebApi.UnityDependencyResolver(UnityConfig.GetConfiguredContainer());
+            GlobalConfiguration.Configuration.DependencyResolver = resolver;
+
             WebApiConfig.Register(GlobalConfiguration.Configuration);
         }
     }

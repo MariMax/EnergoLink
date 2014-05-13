@@ -2,14 +2,16 @@
  * loads sub modules and wraps them up into the main module
  * this should be used for top-level module definitions only
  */
-define([
+define('app', [
     'angular',
     'angular-route',
     './controllers/index',
     './directives/index',
     './filters/index',
-    './services/index'
-], function (angular) {
+    './services/index',
+    'configuration'
+
+], function(angular) {
     'use strict';
 
     return angular.module('app', [
@@ -17,6 +19,7 @@ define([
         'app.directives',
         'app.filters',
         'app.services',
-        'ngRoute'
+        'ngRoute',
+        'configuration',
     ]);
 });

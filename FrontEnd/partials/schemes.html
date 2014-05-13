@@ -1,0 +1,60 @@
+<article>
+<div>
+    <h3>Результаты расчетов</h3>
+
+
+     <div class="control">
+        <table class="control">
+        <form name="schemesRequest">
+            <tr>
+                <th>Дата начала</th>
+                <th>Дата окончания</th>
+                <th></th>
+            </tr>
+            <tr>
+                <td>
+<div date-picker required="true" date="model.StartDate"></div>
+                </td>
+                <td>
+<div date-picker required="true" date="model.EndDate"></div>
+                </td>
+                <td><input type="button" ng-click="show()" value="Показать"></td>
+            </tr>
+        </table>
+        <input type="button" ng-click="newCalculation()" value="Новый расчет">
+        </form>
+    </div> 
+</div>
+
+<hr>
+<div ng-if="model.schemes.length">
+<table class="schemeTable center" >
+<tr>
+    <th>Название схемы</th>
+    <th>Дата начала</th>
+    <th>Дата окончания</th>
+    <th>Результат</th>
+</tr>
+<tr ng-repeat="scheme in model.schemes">
+ <td class="name">
+    <a ng-if="scheme.Done" href="{{'#/CalcModule/'+scheme.Id}}">{{scheme.Name}}</a>
+    <label ng-if="!scheme.Done">{{scheme.Name}}</label>
+    </td>
+    <td>
+        <input type="datetime-local" value="{{scheme.StartDate}}" disabled>
+    </td>
+    <td>
+        <input type="datetime-local" value="{{scheme.EndDate}}" disabled>
+    </td>
+    <td>
+        <img src="/images/Done.png" height="15px" ng-if="scheme.Done" alt="Расчет завершен" title="Расчет завершен">   
+        <img src="/images/process.gif" height="15px" ng-if="!scheme.Done" alt="Расчитываем, придется немного подождать" title="Расчитываем, придется немного подождать">  
+    </td>
+    <td>
+        <input type="button" ng-click="recalc(scheme.Id)" ng-if="scheme.Done" value="Пересчитать">
+    </td>
+</tr>
+</table>
+</div>
+
+</article>

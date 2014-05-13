@@ -28,6 +28,7 @@ header.page-header {
     width:100%;
     top:0px;
     left:0px;
+    margin-top:0;
 
     position:absolute;
 
@@ -131,7 +132,6 @@ input[type="password"] {
     margin-bottom:10px;
     padding: 2px 5px;
     width: 95%;
-    height: 24px;
     border: 1px solid #ccc;
 
 }
@@ -149,7 +149,7 @@ input[type="submit"] {
 }
 /*CalcPage*/
 
-article.calc{
+article{
     min-width: 700px;
     //min-height: 100%;
     padding:20px;
@@ -165,8 +165,13 @@ article.calc .tree {
     min-width:30%;
 
     padding: 2%;
+<<<<<<< HEAD
    // background-color: rgba(243, 156, 18, 0.1);
 
+=======
+    //background-color: rgba(243, 156, 18, 0.1);
+    
+>>>>>>> FETCH_HEAD
 }
 
 article.calc .tree b{
@@ -177,7 +182,22 @@ article.calc .table {
 
     float:right;
     min-width: 60%;
+    width:60%;
     padding: 2%;
     //background-color: rgba(243, 156, 18, 0.1);
+<<<<<<< HEAD
 
 }
+=======
+    
+}
+
+table.schemeTable{width:100%;}
+table.schemeTable td,table.schemeTable th{text-align:center;}
+table.schemeTable td.name{text-align:left;}
+
+.center{margin:0 auto;}
+
+table.control{margin: 10px;width:500px; vertical-align:middle;}
+.input-group{margin:10px;}
+>>>>>>> FETCH_HEAD
