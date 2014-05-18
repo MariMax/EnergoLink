@@ -13,7 +13,7 @@ namespace CloudAskue.BusinessLogic
             {
                 string value = schemeId.ToString() + startDate.ToString() + endDate.ToString();
                 byte[] hash = sha1.ComputeHash(Encoding.Default.GetBytes(value));
-                return new Guid(hash);
+                return Guid.NewGuid();
             }
         }
     }

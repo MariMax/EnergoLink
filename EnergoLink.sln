@@ -1,8 +1,8 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 2012
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EnergoLink", "EnergoLink\EnergoLink.csproj", "{8283B0DB-24FD-48B9-82DD-A0AB55503D98}"
-EndProject
+# Visual Studio Express 2013 for Web
+VisualStudioVersion = 12.0.21005.1
+MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CloudAscue.Mocks", "CloudAscue.Mocks\CloudAscue.Mocks.csproj", "{4882B95A-9D04-4A6B-B8B1-0824F76B6532}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CloudAskue.BusinessLogic", "CloudAskue.BusinessLogic\CloudAskue.BusinessLogic.csproj", "{A7A44564-16EC-48C5-B08F-E45F1D9232A4}"
@@ -32,10 +32,6 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{8283B0DB-24FD-48B9-82DD-A0AB55503D98}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{8283B0DB-24FD-48B9-82DD-A0AB55503D98}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{8283B0DB-24FD-48B9-82DD-A0AB55503D98}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{8283B0DB-24FD-48B9-82DD-A0AB55503D98}.Release|Any CPU.Build.0 = Release|Any CPU
 		{4882B95A-9D04-4A6B-B8B1-0824F76B6532}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{4882B95A-9D04-4A6B-B8B1-0824F76B6532}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{4882B95A-9D04-4A6B-B8B1-0824F76B6532}.Release|Any CPU.ActiveCfg = Release|Any CPU
