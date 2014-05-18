@@ -49,7 +49,7 @@
     <Compile Include="MeasuringChannel.cs" />
     <Compile Include="MeasuringPoint.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Scheme.cs" />
+    <Compile Include="SchemeInList.cs" />
     <Compile Include="SolveChannel.cs" />
     <Compile Include="SolvePoint.cs" />
   </ItemGroup>

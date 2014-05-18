@@ -8,7 +8,14 @@ namespace CloudAskue.BusinessLogic.Contracts
 {
     public interface ISchemesDataSource
     {
-        IEnumerable<Scheme> GetSchemes(Guid companyId, DateTime startDate, DateTime endDate);
+        /// <summary>
+        /// Функция отдает список схем доступных пользователю компании за определенный срок
+        /// </summary>
+        /// <param name="companyId"></param>
+        /// <param name="startDate"></param>
+        /// <param name="endDate"></param>
+        /// <returns></returns>
+        IEnumerable<SchemeInList> GetSchemes(Guid companyId, DateTime startDate, DateTime endDate);
         Guid Calc(Guid schemeId, DateTime startDate, DateTime endDate);
         Maket GetCalcResult(Guid calcId);
     }

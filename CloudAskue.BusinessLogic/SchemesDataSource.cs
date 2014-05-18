@@ -2,7 +2,6 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text.RegularExpressions;
-using System.Threading.Tasks;
 using CloudAskue.BusinessLogic.Contracts;
 using CloudAskue.DataProviders.Contracts;
 
@@ -21,17 +20,9 @@ namespace CloudAskue.BusinessLogic
             _dataProvider = dataProvider;
         }
 
-        public IEnumerable<Scheme> GetSchemes(Guid companyId, DateTime startDate, DateTime endDate)
+        public IEnumerable<SchemeInList> GetSchemes(Guid companyId, DateTime startDate, DateTime endDate)
         {
             var schemes = _schemeProvider.GetSchemes(companyId, startDate, endDate).ToList();
-            foreach (var scheme in schemes)
-            {
-                Guid calcId = _calcGuidGenerator.Generate(scheme.Id, startDate, endDate);
-                if (_schemeProvider.Exists(calcId))
-                {
-                    scheme.CalcId = calcId;
-                }
-            }
             return schemes;
         }
 
@@ -47,8 +38,8 @@ namespace CloudAskue.BusinessLogic
         double CalcExpression(string formula)
         {
             double value = 0;
-            string pattern = @"(\[\w+\]\.\[\w+\])";
-            Regex regex = new Regex(pattern);
+            const string pattern = @"(\[\w+\]\.\[\w+\])";
+            var regex = new Regex(pattern);
             MatchCollection matchCollection = regex.Matches(formula);
             if (matchCollection.Count == 0)
             {
@@ -67,7 +58,7 @@ namespace CloudAskue.BusinessLogic
 
         private Maket CalculateScheme(Guid schemeId, DateTime startDate, DateTime endDate)
         {
-            Maket maket = GetMaket(schemeId);
+            Maket maket = GetSchemeMaket(schemeId);
             foreach (var area in maket.Areas)
             {
                 foreach (var deliveryPoint in area.DeliveryPoints)
@@ -128,9 +119,9 @@ namespace CloudAskue.BusinessLogic
             return maket;
         }
 
-        private Maket GetMaket(Guid schemeId)
+        private Maket GetSchemeMaket(Guid schemeId)
         {
-            return _schemeProvider.GetMaket(schemeId);
+            return _schemeProvider.GetSchemeMaket(schemeId);
         }
 
         public Maket GetCalcResult(Guid calcId)

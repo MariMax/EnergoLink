@@ -16,7 +16,7 @@ namespace DataProviders.Tests
             ISchemeProvider schemeProvider = new SchemeProvider(cs);
             Guid calcId = Guid.NewGuid();
             Maket maket = new Maket();
-            maket.Areas.Add(new Area() { Name = "test" });
+            maket.Areas.Add(new Area { Name = "test" });
             schemeProvider.SaveMaket(calcId, maket);
             var actualmaket = schemeProvider.GetCalcResult(calcId);
             Assert.AreEqual(maket.Areas[0].Name, actualmaket.Areas[0].Name);

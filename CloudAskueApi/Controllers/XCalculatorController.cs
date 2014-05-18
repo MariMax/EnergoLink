@@ -19,20 +19,37 @@ namespace CloudAskueApi.Controllers
             _schemesDataSource = schemesDataSource;
         }
 
-        
+
         //http://localhost:2226/api/XCalculator/GetSchemes?CompanyId=3DC72D1C-1DA4-425C-ACFA-99DE60C89BCB
-    [HttpPost]
+        /// <summary>
+        /// Функция отдает список схем доступных пользователю компании за определенный срок
+        /// </summary>
+        /// <param name="query"></param>
+        /// <returns></returns>
+        [HttpPost]
         public HttpResponseMessage GetSchemes(ShemeQuery query)
         {
             var schemes = _schemesDataSource.GetSchemes(query.CompanyId, query.StartDate, query.EndDate);
             return Request.CreateResponse(HttpStatusCode.OK, new { Schemes = schemes });
         }
 
+        /// <summary>
+        /// Получить результат расчета
+        /// </summary>
+        /// <param name="calcId"></param>
+        /// <returns></returns>
+        [HttpGet]
         public HttpResponseMessage GetCalcResult([FromUri]Guid calcId)
         {
             var calcResult = _schemesDataSource.GetCalcResult(calcId);
             return Request.CreateResponse(HttpStatusCode.OK, new { CalcResult = calcResult });
         }
+
+        /// <summary>
+        /// Запустить расчет
+        /// </summary>
+        /// <param name="query"></param>
+        /// <returns></returns>
         [HttpPost]
         public HttpResponseMessage Calc(CalcQuery query)
         {

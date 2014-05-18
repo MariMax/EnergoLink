@@ -11,19 +11,18 @@ namespace CloudAscue.Mocks
 {
     public class SchemeProviderMock : ISchemeProvider
     {
-        public IEnumerable<Scheme> GetSchemes(Guid companyId, DateTime startDate, DateTime endDate)
+        public IEnumerable<SchemeInList> GetSchemes(Guid companyId, DateTime startDate, DateTime endDate)
         {
-            return new List<Scheme>
+            return new List<SchemeInList>
                        {
-                           new Scheme{EndDate = new DateTime(2014,5,1),
+                           new SchemeInList{
                            Id = Guid.Parse("15DFD5F7-D61C-495F-9574-5E62CAF39B52"),
                            Name = "ОАО \"Челябэнергосбыт\"",
-                           StartDate = new DateTime(2014,4,1)
                            },
-                           new Scheme{EndDate = new DateTime(2014,5,1),
+                           new SchemeInList{
                            Id = Guid.Parse("F3518B55-F4C4-4836-8063-43F2591C4761"),
                            Name = "\"ЭСКБ\"",
-                           StartDate = new DateTime(2014,4,1)
+                           CalcId = Guid.NewGuid()
                            },
                        };
         }
@@ -83,7 +82,7 @@ namespace CloudAscue.Mocks
             measuringPoint1.MeasuringChannels.Add(GetChannel("Реактивная энергия(Прием)", "mc3"));
             measuringPoint1.MeasuringChannels.Add(GetChannel("Реактивная энергия(Отдача)", "mc4"));
             deliveryPoint.MeasuringPoints.Add(measuringPoint1);
-            SolvePoint solvePoint=new SolvePoint();
+            SolvePoint solvePoint = new SolvePoint();
             solvePoint.Desc = "Потери на вводе 6 кВ Т1 №1";
             solvePoint.SolveChannels.Add(GetSolveChannel("Активная энергия(Прием)", "mc1"));
             solvePoint.SolveChannels.Add(GetSolveChannel("Активная энергия(Отдача)", "mc1"));
@@ -106,7 +105,7 @@ namespace CloudAscue.Mocks
             throw new NotImplementedException();
         }
 
-        public Maket GetMaket(Guid schemeId)
+        public Maket GetSchemeMaket(Guid schemeId)
         {
             throw new NotImplementedException();
         }

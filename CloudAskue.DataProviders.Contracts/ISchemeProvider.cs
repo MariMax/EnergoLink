@@ -14,11 +14,11 @@ namespace CloudAskue.DataProviders.Contracts
 
     public interface ISchemeProvider
     {
-        IEnumerable<Scheme> GetSchemes(Guid companyId, DateTime startDate, DateTime endDate);
+        IEnumerable<SchemeInList> GetSchemes(Guid companyId, DateTime startDate, DateTime endDate);
         Maket GetCalcResult(Guid calcId);
         void SaveMaket(Guid calcId, Maket maket);
         bool Exists(Guid calcId);
         void UpdateSchemeCalcId(Guid schemeId, Guid calcId);
-        Maket GetMaket(Guid schemeId);
+        Maket GetSchemeMaket(Guid schemeId);
     }
 }
