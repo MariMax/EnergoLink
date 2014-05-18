@@ -6,7 +6,6 @@ using System.Text;
 using System.Threading.Tasks;
 using CloudAskue.BusinessLogic.Contracts;
 using CloudAskue.DataProviders.Contracts;
-using CloudAskueApi.Models;
 
 namespace CloudAscue.Mocks
 {
@@ -16,12 +15,12 @@ namespace CloudAscue.Mocks
         {
             return new List<Scheme>
                        {
-                           new Scheme{Done = true, EndDate = new DateTime(2014,5,1),
+                           new Scheme{EndDate = new DateTime(2014,5,1),
                            Id = Guid.Parse("15DFD5F7-D61C-495F-9574-5E62CAF39B52"),
                            Name = "ОАО \"Челябэнергосбыт\"",
                            StartDate = new DateTime(2014,4,1)
                            },
-                           new Scheme{Done = false, EndDate = new DateTime(2014,5,1),
+                           new Scheme{EndDate = new DateTime(2014,5,1),
                            Id = Guid.Parse("F3518B55-F4C4-4836-8063-43F2591C4761"),
                            Name = "\"ЭСКБ\"",
                            StartDate = new DateTime(2014,4,1)
@@ -100,6 +99,26 @@ namespace CloudAscue.Mocks
             area.DeliveryPoints.Add(deliveryPoint);
             maket.Areas.Add(area);
             return maket;
+        }
+
+        public void UpdateSchemeCalcId(Guid schemeId, Guid calcId)
+        {
+            throw new NotImplementedException();
+        }
+
+        public Maket GetMaket(Guid schemeId)
+        {
+            throw new NotImplementedException();
+        }
+
+        public void SaveMaket(Guid calcId, Maket maket)
+        {
+            throw new NotImplementedException();
+        }
+
+        public bool Exists(Guid calcId)
+        {
+            throw new NotImplementedException();
         }
     }
 }
